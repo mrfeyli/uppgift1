@@ -8,7 +8,7 @@ import io
 #byt ut 'localhost' mot din AWS publika IP.
 #Exempel: API_URL = "http://3.85.12.34:8000/predict"
 #==========================================
-API_URL = "http://localhost:8000/predict" 
+API_URL = "http://13.62.6.30:8000"
 
 #Sidans design
 st.set_page_config(page_title="EuroSAT AI", page_icon="🛰️")
