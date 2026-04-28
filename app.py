@@ -35,4 +35,13 @@ if uploaded_file is not None:
         if response.status_code == 200:
             result = response.json()
 
-Visa resultatet snygg
+#Visa resultatet snygg
+
+            st.success(f"AI:ns gissning: {result['prediction']}")
+            st.info(f"Säkerhet: {result['probability']:.2%}")
+        else:
+            st.error(f"Ett fel uppstod i API:et. Statuskod: {response.status_code}")
+
+    except requests.exceptions.ConnectionError:
+        st.error(f"⚠️ Kunde inte ansluta till backend på {API_URL}.")
+        st.write("Om du kör detta live, glöm inte att uppdatera API_URL i koden till din AWS-maskins IP-adress!")
